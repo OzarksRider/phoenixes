@@ -37,12 +37,28 @@ Security is a balance
 
 
 
-### The Goal: 12 Factor Applications
+### The Goal: 12 Factor Application
+
+| Facctor | Description | Notes |
+| ----- | ---------- | ------------------- |
+| I. Codebase | One codebase tracked in revision control, many deploys |  |
+| II. Dependencies | Explicitly declare and isolate dependencies |  |
+| III. Config | Store config in the environment |  |
+| IV. Backing services | Treat backing services as attached resources |  |
+| V. Build, release, run | Strictly separate build and run stages |  |
+| VI. Processes | Execute the app as one or more stateless processes |  |
+| VII. Port binding | Export services via port binding |  |
+| VIII. Concurrency | Scale out via the process model |  |
+| IX. Disposability | Maximize robustness with fast startup and graceful shutdown |  |
+| X. Dev/prod parity | Keep development, staging, and production as similar as possible |  |
+| XI. Logs | Treat logs as event streams |  |
+| XII. Admin processes | Run admin/management tasks as one-off processes |  |
+
+Source: ![12factor.net](https://12factor.net)
 
 ## The Role of DevOps
 
+Traditional software engineering has many similarities with constuction projects. For example, changes to requirements made early in a project have a much lower cost that grows over time. Making changes on a blueprint are much cheaper, often less than 1%, than later phases of construction. For example, lets say you were building a house and decided to move the location of a toilet. It may be a cosmetic change or it could be due to a bug - like a door not being able to swing properly due to the toilet being too close. If this change is caught early enough, it ight just require some changes to the blueprints. If this was found after the rough plumbing or framing was complete, the cost would likely be much higher but still much more managable than after the tile work, plumbing and carpentry were complete.
+
 ### Design, Build, Test, Improve
-
-Traditional software engineering carries many similarities with constuction.  
-
 
