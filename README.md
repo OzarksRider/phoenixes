@@ -3,7 +3,6 @@
 <img align="right" src="./images/Phoenix_detail_from_Aberdeen_Bestiary.jpg?raw=true" width=
 "150">The phoenix is bird from Greek mythology that would live a very long time, but eventually die by bursting into flames. From the ashes, a new bird would be born to start the 500 year cycle anew. 
 
-
 The goal of this project to build a system that will help build web applications that are automatically resilient to failures and that will scale sensibly when needed.
 
 ## Background
@@ -20,6 +19,11 @@ For example, the Romans built roads, buildings and aquaducts that still are in u
 
 In engineering, the best tools available are to used to build the most reliable system possible that will run for the desired lifetime. 
 
+Traditional software engineering has many similarities with constuction projects. For example, changes to requirements made early in a project have a much lower cost that grows over time. Making changes on a blueprint are much cheaper, often less than 1%, than later phases of construction. For example, lets say you were building a house and decided to move the location of a toilet. It may be a cosmetic change or it could be due to a bug - like a door not being able to swing properly due to the toilet being too close. If this change is caught early enough, it ight just require some changes to the blueprints. If this was found after the rough plumbing or framing was complete, the cost would likely be much higher but still much more managable than after the tile work, plumbing and carpentry were complete.
+
+### Design, Build, Test, Improve
+
+
 
 ### Cheap, Fast, Right: Pick any Two
 
@@ -34,13 +38,20 @@ Beware, experince shows that getting funding and time for updating a flawed syst
 <img align="right" src="./images/TRIAD.png?raw=true" width=
 "250"> Security is a balance between different elements. There are different methods used to evaluate this balance but the two most common are the parkerian hexad and the CIA triad. We will consider the CIA triad. 
 
+When one of these elements is missing or out of balance we are left with an insecure system. It is tempting to consider the information secure if it is simply encrypted, and this is an important step. If we keep our information safely encrypted and use a hashing function we may be able to sucessfully ensure that it is both confidential and has integrity maintained but availablity would be lost if the key goes missing. This means that we cannot use it when needed. Permanent loss of a key is called cryto shredding and is an effective way to securly destroy data. A less permanent way to lose availability might be a DDoS (Distributed Denial of Service) type attack. A similar failure would be a simple surge in demand that may be entirely innocent like an unexpected popularity of a social media post or sudden surge in demand to a little used government website like one that displays details of emergency messages. The system would need to be able to scale quickly and unexpectedly. Afterwards as the demand wanes, the system can automatically scale back down to minimize costs.
+
 | Triad Element | Description |
 | --- | ----------- |
 | Confidentiality | The information should only be available to authorized users. |
 | Integrity | Information shoule be protected from modification by unauthorized users. |
 | Availability | The system should be available when needed. |
 
-With the additonal of security as part of the design, DevOps becomes DevSecOps.
+With the additon of security as part of the design and operations processes, DevOps becomes DevSecOps. This includes security by design features such as encryption of data at rest, including automatic code scanning tools in the build process, securing of the computing instances using elements of 12 factor design and use of encryption while transmitting data.
+
+Data should be encrypted at rest, while being processed and in motion.
+
+
+## The Role of DevOps / DevSecOps
 
 ## Evolution of Cloud Computing
 
@@ -69,11 +80,4 @@ With the additonal of security as part of the design, DevOps becomes DevSecOps.
 | XI. Logs | Treat logs as event streams |  |
 | XII. Admin processes | Run admin/management tasks as one-off processes |  |
 
-Source: ![12factor.net](https://12factor.net)
-
-## The Role of DevOps
-
-Traditional software engineering has many similarities with constuction projects. For example, changes to requirements made early in a project have a much lower cost that grows over time. Making changes on a blueprint are much cheaper, often less than 1%, than later phases of construction. For example, lets say you were building a house and decided to move the location of a toilet. It may be a cosmetic change or it could be due to a bug - like a door not being able to swing properly due to the toilet being too close. If this change is caught early enough, it ight just require some changes to the blueprints. If this was found after the rough plumbing or framing was complete, the cost would likely be much higher but still much more managable than after the tile work, plumbing and carpentry were complete.
-
-### Design, Build, Test, Improve
-
+Source: [12factor.net](https://12factor.net)
