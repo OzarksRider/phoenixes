@@ -1,7 +1,7 @@
 # Phoenixes Cloud Management System 
-!(./images/Phoenix_detail_from_Aberdeen_Bestiary.jpg?raw=true)
 
-The phoenix is bird from Greek mythology that would live a very long time, but eventually die by bursting into flames. From the ashes, a new bird would be born to start the 500 year cycle anew. 
+<img align="right" src="./images/Phoenix_detail_from_Aberdeen_Bestiary.jpg?raw=true" width=
+"150">The phoenix is bird from Greek mythology that would live a very long time, but eventually die by bursting into flames. From the ashes, a new bird would be born to start the 500 year cycle anew. 
 
 
 The goal of this project to build a system that will help build web applications that are automatically resilient to failures and that will scale sensibly when needed.
@@ -31,15 +31,30 @@ Beware, experince shows that getting funding and time for updating a flawed syst
 
 ### The Security CIA Triad: Confidentiality, Integrity and Availablity
 
-Security is a balance
+<img align="right" src="./images/TRIAD.png?raw=true" width=
+"250"> Security is a balance between different elements. There are different methods used to evaluate this balance but the two most common are the parkerian hexad and the CIA triad. We will consider the CIA triad. 
+
+| Triad Element | Description |
+| --- | ----------- |
+| Confidentiality | The information should only be available to authorized users. |
+| Integrity | Information shoule be protected from modification by unauthorized users. |
+| Availability | The system should be available when needed. |
+
+With the additonal of security as part of the design, DevOps becomes DevSecOps.
 
 ## Evolution of Cloud Computing
 
+### Physical Servers
 
+### Virtual Servers
+
+### Containers
+
+### Serverless Functions
 
 ### The Goal: 12 Factor Application
 
-| Facctor | Description | Notes |
+| Factor | Description | Notes |
 | ----- | ---------- | ------------------- |
 | I. Codebase | One codebase tracked in revision control, many deploys |  |
 | II. Dependencies | Explicitly declare and isolate dependencies |  |
