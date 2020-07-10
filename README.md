@@ -25,8 +25,10 @@ Traditional software engineering has many similarities with constuction projects
 
 Part of the art of engineering is to constantly improve designs while verifyin that they meet specifications. This is known by many names like Plan-Do-Check-Act (PDCA).
 
-<img align="center" src="./images/PDCA-Multi-Loop.png" width=
-"250">
+<img src="./images/PDCA-Multi-Loop.png" width=
+"600">
+
+(./images/PDCA-Multi-Loop.png)
 
 This will be modified partly for the purposes of this discussion on software engineering:
 
@@ -105,7 +107,7 @@ Source: [12factor.net](https://12factor.net)
 
 ## I. Codebase
 
-All code should be stored and managed using a version control system, such as git or svn. 
+All code should be stored and managed using a version control system, such as git or svn in a something called repository. 
 
 ## II. Dependencies
 
@@ -117,15 +119,32 @@ All code should be stored and managed using a version control system, such as gi
 
 ## VI. Processes
 
+
+
 ## VII. Port binding
 
 ## VIII. Concurrency
 
 ## IX. Disposability
 
-New instances can be created and terminated at any time to meet the demands of scaling and recovery.
+New instances can be created and terminated at any time. This is required to meet the demands of scaling and recovery.
 
 ## X. Development / Production parity
+
+The same code should run irrespective of enviornment. Any changes should be passed through the 
+
+```java
+String db_connection = System.getenv("db_connection");
+```
+
+```java
+String db_connection;
+if (is_production) {
+   db_connection = "";
+} else {
+   db_connection = "";
+}
+```
 
 ## XI. Logs
 
@@ -133,5 +152,8 @@ Any logs should not be stored local to the instance as it could be terminated at
 
 ## XII. Admin processes 
 
+# References
 
-https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
+- https://12factor.net
+- https://en.wikipedia.org/wiki/X86_virtualization
+- https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
