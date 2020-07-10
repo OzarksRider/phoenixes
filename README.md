@@ -13,17 +13,29 @@ Advances in computing and CPU capabilities provided a solution with the ability 
 
 ## The Art of Software Engineering
 
-There is an art to engineering as well as a science. Computer Science is about constantly pushing the boundaries of what we know and can achive with comptuers. Engineering is different. The goal of engineering is to build reliable systems that will perform for the desired lifetime within the desired specifications.
+There is an art to engineering as well as a science. Computer Science is about constantly pushing the boundaries of what we know and can achive with comptuers. Engineering is different. The goal of engineering is to build reliable systems that will perform for the desired lifetime and within the desired specifications. It is possible to create engineered systems that will run for decades or more. Ask poor enginer who has been asked to maintain a 4GL or COBOL system.
 
-For example, the Romans built roads, buildings and aquaducts that still are in use today without access to what we would consider essential tools like algebra, calculus or even what we would generally understand as scientific methods. They did have an excellent understanding of geometry from the Greeks 
+As an example of engineering, the Romans built roads, buildings and aquaducts that still are in use today without access at the time to what we would consider essential tools like algebra, calculus or even what we would generally understand as scientific methods. They did have an excellent understanding of geometry from the Greeks and developed exceptional concrete formulas through trial and error. Some of these formulas have only been finally reproduced in the modern era.
 
 In engineering, the best tools available are to used to build the most reliable system possible that will run for the desired lifetime. 
 
-Traditional software engineering has many similarities with constuction projects. For example, changes to requirements made early in a project have a much lower cost that grows over time. Making changes on a blueprint are much cheaper, often less than 1%, than later phases of construction. For example, lets say you were building a house and decided to move the location of a toilet. It may be a cosmetic change or it could be due to a bug - like a door not being able to swing properly due to the toilet being too close. If this change is caught early enough, it ight just require some changes to the blueprints. If this was found after the rough plumbing or framing was complete, the cost would likely be much higher but still much more managable than after the tile work, plumbing and carpentry were complete.
+Traditional software engineering has many similarities with constuction projects. Changes to requirements made early in a project have a much lower cost that grows over time. Making changes on a blueprint are much cheaper, often less than 1%, than making the same changs in later phases of construction. For example, lets say you were building a house and decided to move the location of a toilet. It may be a cosmetic change or it could be due to a bug - like a door not being able to swing properly due to the toilet being too close. If this change is caught early enough, it ight just require some changes to the blueprints. If this was found after the rough plumbing or framing was complete, the cost would likely be much higher but still much more managable than after the tile work, plumbing and carpentry were complete.
 
 ### Design, Build, Test, Improve
 
+Part of the art of engineering is to constantly improve designs while verifyin that they meet specifications. This is known by many names like Plan-Do-Check-Act (PDCA).
 
+<img align="center" src="./images/PDCA-Multi-Loop.png" width=
+"250">
+
+This will be modified partly for the purposes of this discussion on software engineering:
+
+| Step | Description |
+| ---- | ----------- |
+| **Design** | |
+| **Build** | |
+| **Test** | |
+| **Improve** | |
 
 ### Cheap, Fast, Right: Pick any Two
 
@@ -48,14 +60,17 @@ When one of these elements is missing or out of balance we are left with an inse
 
 With the additon of security as part of the design and operations processes, DevOps becomes DevSecOps. This includes security by design features such as encryption of data at rest, including automatic code scanning tools in the build process, securing of the computing instances using elements of 12 factor design and use of encryption while transmitting data.
 
-Data should be encrypted at rest, while being processed and in motion.
-
+Data should be encrypted at rest, in motion and in use. We will attempt to do that in our design by using secure key storage for encryption, using encryption to store and transmit data and by using instances that are as isolated and as secure as possible to process the data.
 
 ## The Role of DevOps / DevSecOps
+
+The velocity of software engineering has changed. With the speed of innovation that exists today, taking weeks or months to make changes using traditional waterfall development methodologies means that companies will be producing obsolete solutions by the time they are released while the competition may be innovating daily. For example, Google, Amazon and Netflix are reported to [make thousands of changes and deployments a day](https://services.google.com/fh/files/misc/state-of-devops-2019.pdf).
 
 ## Evolution of Cloud Computing
 
 ### Physical Servers
+
+In the early days of the internet, you had to purchase a physical server or servers to host your website. 
 
 ### Virtual Servers
 
@@ -63,10 +78,14 @@ Data should be encrypted at rest, while being processed and in motion.
 
 ### Serverless Functions
 
-### The Goal: 12 Factor Application
+### Service Mesh
+
+## Microservices
+
+### The Goal: A 12 Factor Application
 
 | Factor | Description | Notes |
-| ----- | ---------- | ------------------- |
+| ------ | ----------- | ----- |
 | I. Codebase | One codebase tracked in revision control, many deploys |  |
 | II. Dependencies | Explicitly declare and isolate dependencies |  |
 | III. Config | Store config in the environment |  |
@@ -80,4 +99,39 @@ Data should be encrypted at rest, while being processed and in motion.
 | XI. Logs | Treat logs as event streams |  |
 | XII. Admin processes | Run admin/management tasks as one-off processes |  |
 
+Within the microserice application, each level or layer should ideal conform to a 12 factor design, if applicable.
+
 Source: [12factor.net](https://12factor.net)
+
+## I. Codebase
+
+All code should be stored and managed using a version control system, such as git or svn. 
+
+## II. Dependencies
+
+## III. Config
+
+## IV. Backing services
+
+## V. Build, release, run
+
+## VI. Processes
+
+## VII. Port binding
+
+## VIII. Concurrency
+
+## IX. Disposability
+
+New instances can be created and terminated at any time to meet the demands of scaling and recovery.
+
+## X. Development / Production parity
+
+## XI. Logs
+
+Any logs should not be stored local to the instance as it could be terminated at any time. By using a logging library the error messages can be redirected to the standard error output and gathered for collection and analysis. 
+
+## XII. Admin processes 
+
+
+https://services.google.com/fh/files/misc/state-of-devops-2019.pdf
